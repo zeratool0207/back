@@ -1,18 +1,18 @@
 package com.example.demo.controller;
 
 import com.example.demo.service.TestService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-@Controller
+@CrossOrigin(origins = "http://localhost:3000")
+@RestController
 public class TestController {
 
     private final TestService testService;
@@ -22,12 +22,12 @@ public class TestController {
     }
 
     @GetMapping("/api/list")
-    public List<Map<String,Object>> getList() {
-        System.out.println("Controller 진입 ");
+    public List<Map<String,Object>> getList(HttpServletRequest request) {
         List<Map<String, Object>> list = new ArrayList<>();
+        System.out.println(request.getRequestURI());
+
         list = testService.getList();
         System.out.println("this is list ::" + list);
-        System.out.println("퇴거");
 
         return list;
     }
@@ -35,10 +35,7 @@ public class TestController {
     @GetMapping("/api/test")
     public String getTest() {
         String tst = "" ;
-        System.out.println("this is before tst:" + tst);
-
         tst = testService.getTest();
-        System.out.println("this is after tst:" + tst);
         return tst;
     }
 
