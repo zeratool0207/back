@@ -21,7 +21,7 @@ public class TestController {
         this.testService = testService;
     }
 
-    @GetMapping("/api/list")
+    @GetMapping("/api/test/list")
     public List<Map<String,Object>> getList(HttpServletRequest request) {
         List<Map<String, Object>> list = new ArrayList<>();
         System.out.println(request.getRequestURI());

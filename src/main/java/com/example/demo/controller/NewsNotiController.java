@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.service.ProductService;
-import com.example.demo.service.ShopService;
+import com.example.demo.service.MainService;
+import com.example.demo.service.NewsNotiService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,18 +12,19 @@ import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-public class ShopController {
-    private final ShopService shopService;
+public class NewsNotiController {
 
-    public ShopController(ShopService shopService) {
-        this.shopService = shopService;
+    private final NewsNotiService newsNotiService;
+
+    public NewsNotiController(NewsNotiService newsNotiService) {
+        this.newsNotiService = newsNotiService;
     }
 
-    @GetMapping("/api/shop")
+    @GetMapping("/api/news")
     public List<Map<String,Object>> getList() {
         List<Map<String, Object>> list = new ArrayList<>();
 
-        list = shopService.getList();
+        list = newsNotiService.getList();
         System.out.println("this is list ::" + list);
 
         return list;

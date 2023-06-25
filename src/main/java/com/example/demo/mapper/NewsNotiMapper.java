@@ -6,8 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 @Mapper
-public interface ProductMapper {
-
+public interface NewsNotiMapper {
     List<Map<String, Object>> getList();
 
 }

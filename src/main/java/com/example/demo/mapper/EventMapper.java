@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 @Mapper
-public interface ProductMapper {
+public interface EventMapper {
 
     List<Map<String, Object>> getList();
 
