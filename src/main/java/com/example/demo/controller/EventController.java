@@ -2,13 +2,9 @@ package com.example.demo.controller;
 
 import com.example.demo.service.EventService;
 import com.example.demo.service.MainService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -20,7 +16,7 @@ public class EventController {
         this.eventService = eventService;
     }
 
-    @GetMapping("/api/event")
+    @GetMapping("/api/event/list")
     public List<Map<String,Object>> getList() {
         List<Map<String, Object>> list = new ArrayList<>();
 
@@ -28,5 +24,15 @@ public class EventController {
         System.out.println("this is list ::" + list);
 
         return list;
+    }
+
+    @GetMapping("/api/event/view")
+    public Map<String,Object> getView(@RequestParam int eve_id) {
+        Map<String, Object> eventMap = new HashMap<>();
+
+        eventMap = eventService.getView(eve_id);
+        System.out.println("this is map::" + eventMap);
+
+        return eventMap;
     }
 }

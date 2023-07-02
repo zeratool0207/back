@@ -4,11 +4,18 @@
 
 <mapper namespace="com.example.demo.mapper.EventMapper">
 
-<!--    <select id="getList" resultType="map">-->
-<!--        select-->
-<!--        *-->
-<!--        from tbl_subway_menu-->
-<!--    </select>-->
+    <select id="getList" resultType="map">
+        select
+            *
+        from tbl_subway_event
+    </select>
+
+    <select id="getView" resultType="map">
+        select
+            *
+        from tbl_subway_event
+        where eve_id = #{ eve_id }
+    </select>
 
 
 

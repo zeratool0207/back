@@ -1,7 +1,6 @@
 package com.example.demo.serviceImpl;
 
 import com.example.demo.mapper.EventMapper;
-import com.example.demo.mapper.MainMapper;
 import com.example.demo.service.EventService;
 import org.springframework.stereotype.Service;
 
@@ -20,5 +19,10 @@ public class EventServiceImpl implements EventService {
     @Override
     public List<Map<String, Object>> getList() {
         return eventMapper.getList();
+    }
+
+    @Override
+    public Map<String, Object> getView(int eve_id) {
+        return eventMapper.getView(eve_id);
     }
 }

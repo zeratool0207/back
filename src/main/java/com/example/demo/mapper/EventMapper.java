@@ -10,4 +10,6 @@ public interface EventMapper {
 
     List<Map<String, Object>> getList();
 
+    Map<String,Object> getView(int eve_id);
+
 }

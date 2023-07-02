@@ -5,6 +5,7 @@ import com.example.demo.service.TestService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -21,11 +22,11 @@ public class MainController {
         this.mainService = mainService;
     }
 
-    @GetMapping("/api/menu")
-    public List<Map<String,Object>> getList() {
+    @GetMapping("/api/menu/list")
+    public List<Map<String,Object>> getMenuList() {
         List<Map<String, Object>> list = new ArrayList<>();
 
-        list = mainService.getList();
+        list = mainService.getMenuList();
         System.out.println("this is list ::" + list);
 
         return list;

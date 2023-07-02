@@ -4,11 +4,17 @@
 
 <mapper namespace="com.example.demo.mapper.MainMapper">
 
-    <select id="getList" resultType="map">
+    <select id="getMenuList" resultType="map">
         select
-            *
-        from tbl_subway_menu
+                men_id,
+                men_name,
+                men_up_no,
+                men_disp_no,
+                men_ord,
+                men_url
+            from tbl_subway_menu
     </select>
+
 
 
 

@@ -19,7 +19,7 @@ public class MainServiceImpl implements MainService {
 
 
     @Override
-    public List<Map<String, Object>> getList() {
-        return mainMapper.getList();
+    public List<Map<String, Object>> getMenuList() {
+        return mainMapper.getMenuList();
     }
 }

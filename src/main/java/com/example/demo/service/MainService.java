@@ -5,6 +5,6 @@ import java.util.Map;
 
 public interface MainService {
 
-    List<Map<String,Object>> getList();
+    List<Map<String,Object>> getMenuList();
 
 }
