@@ -21,11 +21,11 @@ public class AdvertisementController {
         this.advertisementService = advertisementService;
     }
 
-    @GetMapping("/api/advertisement")
-    public List<Map<String,Object>> getList() {
+    @GetMapping("/api/adv/list")
+    public List<Map<String,Object>> getAdvertisementList() {
         List<Map<String, Object>> list = new ArrayList<>();
 
-        list = advertisementService.getList();
+        list = advertisementService.getAdvertisementList();
         System.out.println("this is list ::" + list);
 
         return list;

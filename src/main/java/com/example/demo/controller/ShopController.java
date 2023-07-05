@@ -19,11 +19,11 @@ public class ShopController {
         this.shopService = shopService;
     }
 
-    @GetMapping("/api/shop")
-    public List<Map<String,Object>> getList() {
+    @GetMapping("/api/shop/list")
+    public List<Map<String,Object>> getShopList() {
         List<Map<String, Object>> list = new ArrayList<>();
 
-        list = shopService.getList();
+        list = shopService.getShopList();
         System.out.println("this is list ::" + list);
 
         return list;

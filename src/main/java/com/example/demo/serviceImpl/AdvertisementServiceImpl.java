@@ -17,9 +17,8 @@ public class AdvertisementServiceImpl implements AdvertisementService {
         this.advertisementMapper = advertisementMapper;
     }
 
-
     @Override
-    public List<Map<String, Object>> getList() {
-        return advertisementMapper.getList();
+    public List<Map<String, Object>> getAdvertisementList() {
+        return advertisementMapper.getAdvertisementList();
     }
 }

@@ -17,7 +17,7 @@ public class ShopServiceImpl implements ShopService {
     }
 
     @Override
-    public List<Map<String, Object>> getList() {
-        return null;
+    public List<Map<String, Object>> getShopList() {
+        return shopMapper.getShopList();
     }
 }

@@ -8,6 +8,6 @@ import java.util.Map;
 @Mapper
 public interface ShopMapper {
 
-    List<Map<String, Object>> getList();
+    List<Map<String, Object>> getShopList();
 
 }
