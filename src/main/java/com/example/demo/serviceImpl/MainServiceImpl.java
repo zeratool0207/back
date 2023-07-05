@@ -22,4 +22,16 @@ public class MainServiceImpl implements MainService {
     public List<Map<String, Object>> getMenuList() {
         return mainMapper.getMenuList();
     }
+
+    @Override
+    public List<Map<String, Object>> getProductList() {
+        return mainMapper.getProductList();
+    }
+
+    @Override
+    public List<Map<String, Object>> getNewsList() {
+        return mainMapper.getNewsList();
+    }
+
+
 }

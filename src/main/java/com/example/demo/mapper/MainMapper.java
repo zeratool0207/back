@@ -10,4 +10,11 @@ public interface MainMapper {
 
     List<Map<String, Object>> getMenuList();
 
+    List<Map<String,Object>> getProductList();
+
+    List<Map<String,Object>> getNewsList();
+
+
+
+
 }
