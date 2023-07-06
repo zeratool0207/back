@@ -18,7 +18,19 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Map<String, Object>> getList() {
-        return null;
+    public List<Map<String, Object>> getProductList(String men_cate_id) {
+        return productMapper.getProductList(men_cate_id);
     }
+
+    @Override
+    public List<Map<String, Object>> getProductCateList(String pro_cate_id) {
+        return productMapper.getProductCateList(pro_cate_id);
+    }
+
+    @Override
+    public Map<String, Object> getProductDetail(int pro_id) {
+        return productMapper.getProductDetail(pro_id);
+    }
+
+
 }

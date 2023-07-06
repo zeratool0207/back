@@ -8,6 +8,10 @@ import java.util.Map;
 @Mapper
 public interface ProductMapper {
 
-    List<Map<String, Object>> getList();
+    List<Map<String, Object>> getProductList(String men_cate_id);
+
+    List<Map<String, Object>> getProductCateList(String pro_cate_id);
+
+    Map<String, Object> getProductDetail(int pro_id);
 
 }
