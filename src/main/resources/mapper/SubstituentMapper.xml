@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.SubstituentMapper">
+
+    <select id="getSubstituentList" resultType="map">
+        select
+                a.sbs_id,
+                a.sbs_name_kor,
+                a.sbs_name_eng,
+                a.sbs_use_yn,
+                a.sbs_cal,
+                a.sbs_desc,
+                a.sbs_cate_id,
+                a.sbs_img_id,
+                b.cat_nm,
+                c.img_file_up_path
+            from tbl_subway_substituent a,
+                 tbl_subway_category b,
+                 tbl_subway_image c
+            where a.sbs_cate_id = b.cat_id
+              and a.sbs_img_id = c.img_id
+    </select>
+
+</mapper>
